@@ -12,7 +12,7 @@ func (s *SmartContract) AddRecord(ctx contractapi.TransactionContextInterface, i
 	return ctx.GetStub().PutState(id, []byte(record))
 }
 
-func (s *SmartContract) GetAllAssets(ctx contractapi.TransactionContextInterface) ([]string, error) {
+func (s *SmartContract) GetAllRecords(ctx contractapi.TransactionContextInterface) ([]string, error) {
 	resultsIterator, err := ctx.GetStub().GetStateByRange("", "")
 	if err != nil {
 		return nil, err
